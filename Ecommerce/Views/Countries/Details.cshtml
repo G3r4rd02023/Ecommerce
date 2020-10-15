@@ -1,0 +1,25 @@
+﻿@model Ecommerce.Data.Entities.Country
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<div>
+    <h4>País</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+</div>
+<hr />
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class=" btn btn-info"><i class="glyphicon glyphicon-pencil"></i></a> 
+    <a asp-action="Index" class="btn btn-success "><i class="glyphicon glyphicon-chevron-left"></i></a>
+</div>

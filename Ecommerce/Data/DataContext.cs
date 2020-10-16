@@ -9,9 +9,16 @@ namespace Ecommerce.Data
         {
         }
 
+        public DbSet<Category> Categories { get; set; }
+
         public DbSet<Country> Countries { get; set; }
 
         public DbSet<City> Cities { get; set; }
+
+        public DbSet<Product> Products { get; set; }
+
+        public DbSet<ProductImage> ProductImages { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -22,6 +29,14 @@ namespace Ecommerce.Data
                 .IsUnique();
 
             modelBuilder.Entity<City>()
+                .HasIndex(t => t.Name)
+                .IsUnique();
+
+            modelBuilder.Entity<Category>()
+                .HasIndex(t => t.Name)
+                .IsUnique();
+
+            modelBuilder.Entity<Product>()
                 .HasIndex(t => t.Name)
                 .IsUnique();
 

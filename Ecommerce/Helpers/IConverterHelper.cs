@@ -13,5 +13,9 @@ namespace Ecommerce.Helpers
 
         CategoryViewModel ToCategoryViewModel(Category category);
 
+        Task<Product> ToProductAsync(ProductViewModel model, bool isNew);
+
+        ProductViewModel ToProductViewModel(Product product);
+
     }
 }
